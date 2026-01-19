@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-issue-forms.json
+# docs: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms
+
+name: 🐛 Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: input
+    id: affected-versions
+    attributes:
+      label: Package version(s) affected
+      placeholder: x.y.z
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: how-to-reproduce
+    attributes:
+      label: How to reproduce
+      description: |
+        Provide a usefull reproduction case.
+        ⚠️ Make sure you omit any personal info, credentials, or API keys before you submit the reproduction case!
+    validations:
+      required: true
+  - type: textarea
+    id: possible-solution
+    attributes:
+      label: Possible Solution
+      description: |
+        Optional: only if you have suggestions on a fix/reason for the bug.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: "Optional: any other context about the problem: screenshots, response messages, etc."
